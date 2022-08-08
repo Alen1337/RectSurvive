@@ -1,0 +1,24 @@
+{
+  "name": "rectsurvive",
+  "version": "1.0.0",
+  "description": "Simple multiplayer shooter/survival game",
+  "main": "RectSurviveMain.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./RectSurviveMain.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alen1337/RectSurvive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alen1337/RectSurvive/issues"
+  },
+  "homepage": "https://github.com/Alen1337/RectSurvive#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-ws": "^5.0.2"
+  }
+}
