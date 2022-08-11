@@ -1,26 +1,8 @@
-const express = require('express')
-const app = express()
-const fs = require("fs")
+const app = require("./Features/Network/html/Server").app
+const GameLoop = require("./Features/Gameloop/Server")
+const WebSocketServer = require("./Features/Network/WebSocket/Server")
 
-app.get("/", (req, res) => {
-    res.redirect("/game")
-})
-
-app.get("/game", (req, res) => {
-    fs.readFile("Public/index.html", (err, data) => {
-        res.setHeader("Content-Type", "text/html");
-        res.end(data)
-        console.log(err)
-    })
-})
-
-app.get("/index.js", (req, res) => {
-    fs.readFile("Public/index.js", (err, data) => {
-        res.setHeader("Content-Type", "application/javascript");
-        res.end(data)
-        console.log(err)
-    })
-})
+GameLoop.start()
 
 const server = app.listen(6634, () => {
     console.log("Server started")
