@@ -1,28 +1,25 @@
 let _gameObjects = []
+let _playerID = undefined
 
 export function createObject(msg) {
     let objID = msg.id
-    let newObject = {
-        id: msg.id,
-        position: {
-            x: msg.object.position.x,
-            y: msg.object.position.y,
-        },
-        velocity: {
-            x: msg.object.velocity.x,
-            y: msg.object.velocity.y,
-        },
-        size: {
-            w: msg.object.size.w,
-            h: msg.object.size.h,
-        }
-    }
+    let newObject = msg.object
 
     _gameObjects[objID] = newObject
 
-    console.log("Object Created! ID: ", objID)
-
     return newObject
+}
+
+export function setPlayerID(playerID) {
+    _playerID = playerID
+}
+
+export function getPlayerID() {
+    return _playerID
+}
+
+export function getPlayerObject() {
+    return _gameObjects[_playerID]
 }
 
 export function removeObject(objID) {
@@ -30,11 +27,7 @@ export function removeObject(objID) {
         return
     }
 
-    _gameObjects[objID] = null
-    _gameObjects = _gameObjects.filter((value) => {
-        return value !== null
-    })
-    console.log("Removing objectID: ", objID)
+    delete _gameObjects[objID]
 }
 
 export function getObject(id) {

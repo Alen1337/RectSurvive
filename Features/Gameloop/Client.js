@@ -1,4 +1,5 @@
 import * as Render from "/Render.js"
+import * as Particles from "/Particles.js"
 
 let deltaTime = 0
 
@@ -8,8 +9,10 @@ export function start() {
 
 function update() {
     let timeA = Date.now();
-
+    
+    Particles.update()
     Render.update()
+    
 
     deltaTime = Date.now() - timeA;
     let FPS = 1000.0 / deltaTime

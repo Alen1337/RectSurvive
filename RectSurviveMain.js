@@ -1,4 +1,4 @@
-const app = require("./Features/Network/html/Server").app
+const app = require("./Features/Network/HTML/Server").app
 const GameLoop = require("./Features/Gameloop/Server")
 const WebSocketServer = require("./Features/Network/WebSocket/Server")
 

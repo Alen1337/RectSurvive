@@ -27,9 +27,6 @@ function update(id) {
         if(el.key === 'w') {
             gameObjects[id].velocity.y = -3
         }
-        if(el.key === 0) {
-            //shot(id, gameObjects[id], el.x, el.y)
-        }
     }
 
 }

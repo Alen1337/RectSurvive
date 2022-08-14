@@ -1,6 +1,9 @@
 import * as GO from "/GameObject.js"
 import * as Main from "/main.js"
-import * as Raycast from "/Raycast.js"
+import * as WeaponSystem from "/WeaponSystem.js"
+import * as Particles from "/Particles.js"
+import * as HUD from "/HUD.js"
+
 
 let ctx
 let w
@@ -22,16 +25,14 @@ export function update() {
 
     gameObjects.forEach(gameobject => {
         let go = gameobject
-        ctx.fillStyle = "#00ff48";
+        
+        ctx.fillStyle = "#91812f";
         ctx.fillRect(go.position.x, go.position.y, go.size.w, go.size.h)
+        ctx.fillStyle = "#00ff48";
         ctx.fillText(go.id, go.position.x, go.position.y)
     });
 
-    for(let id in gameObjects) {
-        let go = gameObjects[id]
-        ctx.fillStyle = "#91812f";
-        ctx.fillRect(go.position.x, go.position.y, go.size.w, go.size.h)
-    }
-
-    Raycast.update()
+    WeaponSystem.render()
+    Particles.render()
+    HUD.render()
 }

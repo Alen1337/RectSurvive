@@ -1,7 +1,9 @@
 const GO = require("../GameObject/Server")
 const BC = require("../Network/WebSocket/Server")
+const World = require("../WorldSystem/Server")
 function start() {
     setInterval(update, 0)
+    World.start()
 }
 
 function update() {
@@ -24,7 +26,7 @@ function updatePosition() {
             id: id,
             position: gameObjects[id].position
         }
-        BC.sendBroadcast("/game", msg)
+        BC.sendBroadcast("/game", msg, 'toEveryone')
     }
     deltaTime = Date.now() - startTime
 }

@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
     <title>RectSurvive</title>
-    <style>
-        body {
-            overflow: hidden; /* Hide scrollbars */
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-    </style>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
+    <div class="game-container">
+        <canvas id="canvas"></canvas>
+
+        <div class="hud-container" id="hudContainer">
+
+        </div>
+    </div>
+    
 
     <script type="module" src="main.js"></script>
 </body>

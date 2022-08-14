@@ -56,6 +56,38 @@ app.get("/Raycast.js", (req, res) => {
         res.end(data)
     })
 })
+app.get("/WeaponSystem.js", (req, res) => {
+    fs.readFile("Features/WeaponSystem/Client.js", (err, data) => {
+        res.setHeader("Content-Type", "application/javascript");
+        res.end(data)
+    })
+})
+app.get("/Particles.js", (req, res) => {
+    fs.readFile("Features/ParticlesSystem/Client.js", (err, data) => {
+        res.setHeader("Content-Type", "application/javascript");
+        res.end(data)
+    })
+})
+app.get("/HUD.js", (req, res) => {
+    fs.readFile("Features/HUD/Client.js", (err, data) => {
+        res.setHeader("Content-Type", "application/javascript");
+        res.end(data)
+    })
+})
+app.get("/index.css", (req, res) => {
+    fs.readFile("Public/index.css", (err, data) => {
+        res.setHeader("Content-Type", "text/css");
+        res.end(data)
+    })
+})
+
+app.get("/style.css", (req, res) => {
+    fs.readFile("Public/style.css", (err, data) => {
+        res.setHeader("Content-Type", "text/css");
+        res.end(data)
+    })
+})
+
 
 
 

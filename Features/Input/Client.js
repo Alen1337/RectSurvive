@@ -18,6 +18,7 @@ export function update(e) {
     if(e.type === 'mousedown' && !constains) {
         _activeInputs.push({key: e.button, x: e.clientX, y: e.clientY})
         WSS.sendInput(_activeInputs)
+        _activeInputs = _activeInputs.filter((value) => { return value.key !== e.button })
     }
     
     if(e.type === 'keyup') {
@@ -28,6 +29,11 @@ export function update(e) {
     if(e.type === "mouseup") {
         _activeInputs = _activeInputs.filter((value) => { return value.key !== e.button })
         WSS.sendInput(_activeInputs)
+    }
+    if(e.type === "wheel") {
+        _activeInputs.push({key: 'wheel', deltaY: e.deltaY})
+        WSS.sendInput(_activeInputs)
+        _activeInputs = _activeInputs.filter((value) => { return value.key !== 'wheel' })
     }
 }
 
